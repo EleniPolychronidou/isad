@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Εγγραφή Εξοπλισμού</title>
+  <style>
+    * {
+    box-sizing: border-box;
+    }
+
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      color: #006B94;
+      padding: 40px;
+    }
+    
+    .form-header {
+        background-color: #006B94;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    h4 {
+      text-align: center;
+      color: white;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #006B94;
+      border-radius: 10px;
+      background-color: #f3f3f3;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #006B94;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005779;
+    }
+  </style>
+</head>
+<body>
+    <header class="form-header">
+        <h1>Φόρμα Εγγραφής Νέου Εξοπλισμού</h1>
+        <h4>Παρακαλώ συμπληρώστε τα παρακάτω πεδία</h4>
+      </header>
+      
+  <a href="ολος_ο_εξοπλισμος.html" style="color: #006B94; font-size: small; font-weight: bold; display: inline-block; margin-bottom: 30px;">
+    ← Όλος ο Εξοπλισμός
+  </a>
+  <form>
+    <label for="name">Όνομα Συσκευής:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="type">Τύπος Συσκευής:</label>
+    <select id="type" name="type">
+        <option value="default">--Επιλέξτε--</option>
+        <option value="laptop">Laptop</option>
+        <option value="projector">Προβολέας</option>
+        <option value="printer">Εκτυπωτής</option>
+        <option value="other">Άλλο</option>
+    </select>
+
+    <label for="brand">Μάρκα</label>
+    <input type="text" id="brand" placeholder="π.χ. HP, Dell" required>
+
+    <label for="serial">Σειριακός Αριθμός:</label>
+    <input type="text" id="serial" name="serial">
+
+    <label for="location">Τοποθεσία:</label>
+    <input type="text" id="location" name="location">
+    
+    <!--ίσως πρέπει να βάλουμε περιορισμό επειδή μου επιτρέπει να βάλω και μελλοντική ημερομηνία-->
+    <label for="purchaseDate">Ημερομηνία Αγοράς</label>
+    <input type="date" id="purchaseDate">
+
+    <label for="comments">Σχόλια:</label>
+    <textarea id="comments" name="comments" rows="4"></textarea>
+
+    <button type="submit">Καταχώρηση</button>
+  </form>
+</body>
+</html>
