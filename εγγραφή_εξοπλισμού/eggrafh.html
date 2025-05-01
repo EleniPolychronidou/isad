@@ -65,7 +65,7 @@
   </style>
 </head>
 <body>
-  <h1>Εγγραφή Νέου Εξοπλισμού</h1>
+  <h1>Φόρμα Εγγραφής Νέου Εξοπλισμού</h1>
   <h4>Παρακαλώ συμπληρώστε τα παρακάτω πεδία</h4>
   <a href="ολος_ο_εξοπλισμος.html" style="color: #006B94; font-size: small; font-weight: bold; display: inline-block; margin-bottom: 30px;">
     ← Όλος ο Εξοπλισμός
@@ -83,6 +83,9 @@
         <option value="other">Άλλο</option>
     </select>
 
+    <label for="brand">Μάρκα</label>
+    <input type="text" id="brand" placeholder="π.χ. HP, Dell" required>
+
     <label for="serial">Σειριακός Αριθμός:</label>
     <input type="text" id="serial" name="serial">
 
@@ -91,6 +94,9 @@
 
     <label for="comments">Σχόλια:</label>
     <textarea id="comments" name="comments" rows="4"></textarea>
+
+    <label for="purchaseDate">Ημερομηνία Αγοράς</label>
+    <input type="date" id="purchaseDate">
 
     <button type="submit">Καταχώρηση</button>
   </form>
