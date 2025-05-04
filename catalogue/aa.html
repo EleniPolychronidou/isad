@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
+<div class="page-container">
+<div class="content-wrap">
 <header>  
 <div class="topnav" >
   <h2>Κτηματολόγιο υποδομών Τεχνολογίας Πληροφοριών και Επικοινωνίας(ΤΠΕ) των σχολείων</h2>
@@ -39,55 +41,55 @@
 </div>
 </header>
 
-    <div class="filters">
-        <label>Τύπος:
-            <select>
-                <option>Όλοι</option>
-                <option>Laptop</option>
-                <option>Desktop</option>
-                <option>Προβολέας</option>
-                <option>Εκτυπωτής</option>
-                <option>Διαδραστικός Πίνακας</option>
-            </select>
-        </label>
-        <label>Κατάσταση:
-            <select>
-                <option>Όλες</option>
-                <option>Πολύ καλή κατάσταση</option>
-                <option>Εντάξει</option>
-                <option>Χαλασμένο</option>
-            </select>
-        </label>
-        <label>Τοποθεσία:
-            <select>
-                <option>Όλες</option>
-                <option>Εργαστήριο Πληροφορικής</option>
-                <option>Αίθουσα 1</option>
-                <option>Αίθουσα 2</option>
-                <option>Αίθουσα 3</option>
-                <option>Αίθουσα 4</option>
-                <option>Αίθουσα 5</option>
-                <option>Αίθουσα 6</option>
-                <option>Γραφείο καθηγητών</option>
-                <option>Γραφείο διευθυντή</option>
-                
-            </select>
-        </label>
-        <label>Ετος:
-            <select>
-                <option>Όλα</option>
-                <option>2018</option>
-                <option>2019</option>
-                <option>2020</option>
-                <option>2021</option>
-                <option>2022</option>
-                <option>2023</option>
-                <option>2024</option>
-              
-            </select>
-        </label>
-    </div>
-    <div class="main">
+
+<div class="filters">
+    <label>Τύπος:
+        <select id="typeFilter">
+            <option value="Όλα">Όλα</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Desktop">Desktop</option>
+            <option value="Εκτυπωτής">Εκτυπωτής</option>
+            <option value="Προβολέας">Προβολέας</option>
+            <option value="Διαδραστικός Πίνακας">Διαδραστικός Πίνακας</option>
+        </select>
+    </label>
+    <label>Κατάσταση:
+        <select id="statusFilter">
+            <option value="Όλες">Όλες</option>
+            <option value="Πολύ καλή κατάσταση">Πολύ καλή κατάσταση</option>
+            <option value="Εντάξει">Εντάξει</option>
+            <option value="Χαλασμένος">Χαλασμένος</option>
+        </select>
+    </label>
+    <label>Τοποθεσία:
+        <select id="locationFilter">
+            <option value="Όλες">Όλες</option>
+            <option value="Εργαστήριο Πληροφορικής">Εργαστήριο Πληροφορικής</option>
+            <option value="Αίθουσα 1">Αίθουσα 1</option>
+            <option value="Αίθουσα 2">Αίθουσα 2</option>
+            <option value="Αίθουσα 3">Αίθουσα 3</option>
+            <option value="Αίθουσα 4">Αίθουσα 4</option>
+            <option value="Αίθουσα 5">Αίθουσα 5</option>
+            <option value="Αίθουσα 6">Αίθουσα 6</option>
+            <option value="Γραφείο καθηγητών">Γραφείο καθηγητών</option>
+            <option value="Γραφείο διευθυντή">Γραφείο διευθυντή</option>
+        </select>
+    </label>
+    <label>Έτος:
+        <select id="yearFilter">
+            <option value="Όλα">Όλα</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        </select>
+    </label>
+</div>
+<div class="main">
         <div class="header">
         <header>
           <div>Κατάλογος Εξοπλισμού</div>
@@ -95,7 +97,7 @@
       </div>
 
 
-<table class="logs-table">
+<table id="equipment-table">
     <thead class="categories">
         <tr>
             <th>Συσκευή</th>
@@ -105,7 +107,7 @@
             <th>Ετος</th>
         </tr>
     </thead>
-    <tbody class="log-table">
+    <tbody>
         <tr>
             <td><a href="hp-probook1.html">HP ProBook 440 G9</a></td>
             <td>Laptop</td>
@@ -152,7 +154,7 @@
             <td><a href="hp-probook2.html">HP ProBook 440 G9</a></td>
             <td>Laptop</td>
             <td>Πολύ καλή κατάσταση</td>
-            <td>Αιθουσα 3</td>
+            <td>Αίθουσα 3</td>
             <td>2018</td>
         </tr>
         <tr>
@@ -180,33 +182,36 @@
             <td><a href="smart1.html">SMART Board 6000S Series </a></td>
             <td>Διαδραστικός Πίνακας</td>
             <td>Πολύ καλή κατάσταση</td>
-            <td>Αιθουσα 1</td>
+            <td>Αίθουσα 1</td>
             <td>2023</td>
         </tr>
         <tr>
             <td><a href="smart2.html">SMART Board 6000S Series</a> </td>
             <td>Διαδραστικός Πίνακας</td>
             <td>Πολύ καλή κατάσταση</td>
-            <td>Αιθουσα 2</td>
+            <td>Αίθουσα 2</td>
             <td>2023</td>
         </tr>
         <tr>
             <td><a href="promethean.html">Promethean ActivPanel Nickel</a> </td>
             <td>Διαδραστικός Πίνακας</td>
             <td>Πολύ καλή κατάσταση</td>
-            <td>Αιθουσα 3</td>
+            <td>Αίθουσα 3</td>
             <td>2023</td>
         </tr>
         <tr>
             <td><a href="promethean1.html">Promethean ActivPanel Nickel</a> </td>
             <td>Διαδραστικός Πίνακας</td>
             <td>Εντάξει</td>
-            <td>Αιθουσα 6</td>
+            <td>Αίθουσα 6</td>
             <td>2023</td>
         </tr>
      </tbody>
     </table>
+</div>
+
     <footer class="footer-container">
+    <div class="footer-container">
         <div class="About-Us-Section">
           <h3>Σχετικά με το Inventory SCH</h3>
           <p>Tο Κτηματολόγιο των υποδομών ΤΠΕ των σχολείων αναβαθμίστηκε δίνοντας σε αυτά τη δυνατότητα απευθείας διαχείρισης του καταγραφόμενου εξοπλισμού τους καθώς και μια σειρά νέων λειτουργικών χαρακτηριστικών.</p>
@@ -222,6 +227,39 @@
           <p> &copy; 2025 Inventory. All Rights Reserved</p>
         </div>
     </footer>
- 
+</div>
+<script>
+        function applyFilters() {
+            const type = document.getElementById("typeFilter").value;
+            const status = document.getElementById("statusFilter").value;
+            const location = document.getElementById("locationFilter").value;
+            const year = document.getElementById("yearFilter").value;
+        
+            const rows = document.querySelectorAll("#equipment-table tbody tr");
+
+        
+            rows.forEach(row => {
+                const rowType = row.cells[1].textContent.trim();
+                const rowStatus = row.cells[2].textContent.trim();
+                const rowLocation = row.cells[3].textContent.trim();
+                const rowYear = row.cells[4].textContent.trim().split("/").pop();
+        
+                const matchType = (type === "Όλα" || rowType === type);
+                const matchStatus = (status === "Όλες" || rowStatus === status);
+                const matchLocation = (location === "Όλες" || rowLocation === location);
+                const matchYear = (year === "Όλα" || rowYear === year);
+        
+                if (matchType && matchStatus && matchLocation && matchYear) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+        
+        document.querySelectorAll(".filters select").forEach(select => {
+            select.addEventListener("change", applyFilters);
+        });
+</script>
 </body>
 </html>
