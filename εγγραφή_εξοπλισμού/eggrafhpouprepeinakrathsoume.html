@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <title>Εγγραφή Εξοπλισμού</title>
   <style>
-    * {
+  * {
     box-sizing: border-box;
     }
 
     body {
       background-color: white;
       font-family: Arial, sans-serif;
-      color: #006B94;
+      color: #0077B6;
       margin: 0;
     }
     
@@ -71,38 +71,41 @@
       background-color: #0077B6;
     }
   </style>
+  </style>
 </head>
 <body>
-    <header class="form-header">
+   <header class="form-header">
         <h1>Φόρμα Εγγραφής Νέου Εξοπλισμού</h1>
         <h4>Παρακαλώ συμπληρώστε τα παρακάτω πεδία</h4>
       </header>
       
-  <a href="ολος_ο_εξοπλισμος.html" style="color: #0077B6; font-size: small; font-weight: bold; display: inline-block; margin: 30px;">
+   <a href="ολος_ο_εξοπλισμος.html" style="color: #0077B6; font-size: small; font-weight: bold; display: inline-block; margin: 30px;">
     ← Όλος ο Εξοπλισμός
   </a>
-  <form>
-    <label for="name">Όνομα Συσκευής:</label>
-    <input type="text" id="name" name="name" required>
+  
+  <form id="equipmentForm">
+    <label for="deviceName">Όνομα Συσκευής:</label>
+    <input type="text" id="deviceName" required>
 
-    <label for="type">Τύπος Συσκευής:</label>
-    <select id="type" name="type">
-        <option value="default">--Επιλέξτε--</option>
-        <option value="laptop">Laptop</option>
-        <option value="projector">Προβολέας</option>
-        <option value="printer">Εκτυπωτής</option>
-        <option value="other">Άλλο</option>
+    <label for="deviceType">Τύπος Συσκευής:</label>
+    <select id="deviceType" required>
+      <option value="default">--Επιλέξτε--</option>
+      <option value="laptop">Laptop</option>
+      <option value="projector">Προβολέας</option>
+      <option value="printer">Εκτυπωτής</option>
     </select>
 
     <label for="brand">Μάρκα</label>
     <input type="text" id="brand" placeholder="π.χ. HP, Dell" required>
 
-    <label for="serial">Σειριακός Αριθμός:</label>
-    <input type="text" id="serial" name="serial">
+    <label for="quantity">Πλήθος Ίδιων Συσκευών:</label>
+    <input type="number" id="quantity" name="quantity" min="1" value="1" onchange="generateSerialFields()">
 
-    <label for="location">Τοποθεσία:</label>
-    <input type="text" id="location" name="location">
-    
+    <div id="serialFields">
+      <label for="serial0">Σειριακός Αριθμός 1:</label>
+      <input type="text" id="serial0" name="serial0" required>
+    </div>
+
     <!--ίσως πρέπει να βάλουμε περιορισμό επειδή μου επιτρέπει να βάλω και μελλοντική ημερομηνία-->
     <label for="purchaseDate">Ημερομηνία Αγοράς</label>
     <input type="date" id="purchaseDate">
@@ -112,5 +115,31 @@
 
     <button type="submit">Καταχώρηση</button>
   </form>
+
+  <script>
+    function generateSerialFields() {
+      const quantity = parseInt(document.getElementById("quantity").value);
+      const serialContainer = document.getElementById("serialFields");
+      serialContainer.innerHTML = ""; // Καθαρίζουμε τα προηγούμενα
+
+      for (let i = 0; i < quantity; i++) {
+        const label = document.createElement("label");
+        label.setAttribute("for", "serial" + i);
+        label.innerText = "Σειριακός Αριθμός " + (i + 1) + ":";
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.id = "serial" + i;
+        input.name = "serial" + i;
+        input.required = true;
+
+        serialContainer.appendChild(label);
+        serialContainer.appendChild(input);
+      }
+    }
+
+    // Καλεί τη συνάρτηση αρχικά ώστε να εμφανίζεται το πρώτο πεδίο
+    generateSerialFields();
+  </script>
 </body>
 </html>
