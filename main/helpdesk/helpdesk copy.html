@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>ΣΕΛΙΔΑ ΒΟΗΘΕΙΑΣ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+  <div class="topnav" >
+    <h2>Κτηματολόγιο υποδομών Τεχνολογίας Πληροφοριών και Επικοινωνίας (ΤΠΕ) των σχολείων</h2>
+     <div class="links">
+        <div class="nav-item">
+          <img src="icons8-home-page-48.png" alt="Home Icon" >
+          <a class="nav-link" href="/main/homepage/homepage.html">Αρχική</a>
+        </div>
+        <div class="nav-item">
+          <img src="icons8-signing-a-document-48.png" alt="Sign a Document Icon" ">
+          <a class="nav-link" href="/main/equipment_directory/eggrafhpouprepeinakrathsoume.html">Καταγραφή Εξοπλισμού</a>
+        </div>
+        <div class="nav-item">
+          <img src="icons8-activity-history-48.png" alt="Activity History Icon" >
+          <a class="nav-link" href="/main/UserActivityHistory/useractivityhistory.html">Ιστορικό χρήστη</a>
+        </div>
+        <div class="nav-item">
+          <img src="icons8-help-48.png" alt="Help Icon" > 
+          <a class="nav-link" href="/main/helpdesk/helpdesk.html">Βοήθεια</a>
+        </div>
+        <div class="nav-item">
+          <img src="icons8-equipment-48.png" alt="Equipment Icon" > 
+          <a class="nav-link" href="/main/catalogue/aa.html">Όλος ο Εξοπλισμός</a>
+        </div>
+        <div class="search-container">
+            <input class="search-input" type="text" placeholder="Αναζήτηση..." name="search" style="padding:5px; font-size:14px;">
+            <button  class="search-button" style="padding:5px 10px; font-size:14px;">Αναζήτηση</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+    <h1>Σελίδα Βοήθειας</h1>
+  </header>
+
+  <div class="container">
+
+    <h2>Συχνές Ερωτήσεις</h2>
+
+    <div class="faq">
+      <button class="question">Πώς δημιουργώ λογαριασμό;</button>
+      <div class="answer">
+        Για να δημιουργήσετε λογαριασμό πρέπει να σας δοθούν κωδικοί από την σχολική διεύθυνση.
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="question">Πώς συνδέομαι στον λογαριασμό μου;</button>
+      <div class="answer">
+        Εισάγετε το όνομα χρήστη σας και τον κωδικό σας στη φόρμα σύνδεσης.
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="question">Πώς καταγράφω εξοπλισμό;</button>
+      <div class="answer">
+        Συμπληρώστε τα ζητούμενα στοιχεία στην φόρμα εγγραφής.
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="question">Το πρόβλημά μου δεν υπάρχει στις παραπάνω ερωτήσεις. Που μπορώ να απευθυνθώ;</button>
+      <div class="answer">
+        Μπορείτε να συμπληρώσετε τον προβληματισμό σας στο πλαίσιο παραπόνων παρακάτω.
+      </div>
+    </div>
+
+    <a class="download-link" href="odigies_xrisis.docx" download>Κατεβάστε τις πλήρεις οδηγίες χρήσης</a>
+
+    <!-- Πλαίσιο παραπόνων -->
+    <div class="complaint-box">
+      <h3>Πλαίσιο Παραπόνων</h3>
+      <p>Γράψτε εδώ το πρόβλημα ή την απορία σας:</p>
+      <form>
+        <textarea placeholder="Πληκτρολογήστε το μήνυμά σας εδώ..."></textarea>
+        <br>
+        <button type="submit" class="submit">Υποβολή</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    questions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+
+       
+        document.querySelectorAll('.answer').forEach(a => {
+          if (a !== answer) a.style.display = 'none';
+        });
+
+        answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
+
