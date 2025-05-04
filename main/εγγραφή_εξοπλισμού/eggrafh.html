@@ -70,16 +70,17 @@
     button:hover {
       background-color: #0077B6;
     }
-  </style>
+
   </style>
 </head>
+
 <body>
-   <header class="form-header">
-        <h1>Φόρμα Εγγραφής Νέου Εξοπλισμού</h1>
-        <h4>Παρακαλώ συμπληρώστε τα παρακάτω πεδία</h4>
-      </header>
+  <header class="form-header">
+    <h1>Φόρμα Εγγραφής Νέου Εξοπλισμού</h1>
+    <h4>Παρακαλώ συμπληρώστε τα παρακάτω πεδία</h4>
+  </header>
       
-   <a href="ολος_ο_εξοπλισμος.html" style="color: #0077B6; font-size: small; font-weight: bold; display: inline-block; margin: 30px;">
+  <a href="../catalogue/aa.html" style="color: #0077B6; font-size: small; font-weight: bold; display: inline-block; margin: 30px;">
     ← Όλος ο Εξοπλισμός
   </a>
   
@@ -106,9 +107,8 @@
       <input type="text" id="serial0" name="serial0" required>
     </div>
 
-    <!--ίσως πρέπει να βάλουμε περιορισμό επειδή μου επιτρέπει να βάλω και μελλοντική ημερομηνία-->
     <label for="purchaseDate">Ημερομηνία Αγοράς</label>
-    <input type="date" id="purchaseDate">
+    <input type="date" id="purchaseDate" name="purchaseDate" max="">
 
     <label for="comments">Σχόλια:</label>
     <textarea id="comments" name="comments" rows="4"></textarea>
@@ -116,30 +116,10 @@
     <button type="submit">Καταχώρηση</button>
   </form>
 
-  <script>
-    function generateSerialFields() {
-      const quantity = parseInt(document.getElementById("quantity").value);
-      const serialContainer = document.getElementById("serialFields");
-      serialContainer.innerHTML = ""; // Καθαρίζουμε τα προηγούμενα
+  <script src="serialfields.js"></script>
+  <script src="date.js"></script>
+  <script src="confirmation.js"></script>
 
-      for (let i = 0; i < quantity; i++) {
-        const label = document.createElement("label");
-        label.setAttribute("for", "serial" + i);
-        label.innerText = "Σειριακός Αριθμός " + (i + 1) + ":";
 
-        const input = document.createElement("input");
-        input.type = "text";
-        input.id = "serial" + i;
-        input.name = "serial" + i;
-        input.required = true;
-
-        serialContainer.appendChild(label);
-        serialContainer.appendChild(input);
-      }
-    }
-
-    // Καλεί τη συνάρτηση αρχικά ώστε να εμφανίζεται το πρώτο πεδίο
-    generateSerialFields();
-  </script>
 </body>
 </html>
