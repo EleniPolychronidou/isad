@@ -8,11 +8,10 @@
 <body>
     <div class="box">
         <h2>Επιλογή Λογαριασμού</h2>
-        <form action="log3.html" method="post">
-            <button class="user-button" name="role" value="principle">Διευθυντής</button>
-            <button class="user-button" name="role" value="viceprinciple">Υποδιευθυντής</button>
-            <button class="user-button" name="role" value="inventory">Υπεύθυνος Απογραφής</button>
-            
+        <form >
+            <button  type="button" class="user-button" onclick="window.location.href='log3.html?role=director'">Διευθυντής</button>
+            <button type="button" class="user-button" onclick="window.location.href='log3.html?role=viceprinciple'">Υποδιευθυντής</button>
+            <button  type="button" class="user-button" onclick="window.location.href='log3.html?role=inventory'">Υπεύθυνος Απογραφής</button>
         </form>
     </div>
 </body>
