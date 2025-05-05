@@ -71,6 +71,34 @@
       background-color: #0077B6;
     }
 
+.floating-help-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 30px 0 30px;
+}
+
+
+.floating-help {
+  background-color: #006B94;
+  padding: 10px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.floating-help img {
+  width: 24px;
+  height: 24px;
+}
+
+.floating-help a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
   </style>
 </head>
 
@@ -79,7 +107,12 @@
     <h1>Φόρμα Εγγραφής Νέου Εξοπλισμού</h1>
     <h4>Παρακαλώ συμπληρώστε τα παρακάτω πεδία</h4>
   </header>
-      
+      <div class="floating-help-container">
+  <div class="floating-help">
+    <img src="icons8-help-48.png" alt="Help Icon">
+    <a href="/main/helpdesk/helpdesk.html">Βοήθεια</a>
+  </div>
+</div>
   <a href="../catalogue/aa.html" style="color: #0077B6; font-size: small; font-weight: bold; display: inline-block; margin: 30px;">
     ← Όλος ο Εξοπλισμός
   </a>
@@ -114,8 +147,10 @@
     <textarea id="comments" name="comments" rows="4"></textarea>
 
     <button type="submit">Καταχώρηση</button>
-  </form>
 
+
+
+  </form>
   <script src="serialfields.js"></script>
   <script src="date.js"></script>
   <script src="confirmation.js"></script>
