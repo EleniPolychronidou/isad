@@ -85,10 +85,10 @@
   </a>
   
   <form id="equipmentForm">
-    <label for="deviceName">Όνομα Συσκευής:</label>
+    <label for="deviceName">Όνομα Συσκευής:<span style="color: red">*</span></label>
     <input type="text" id="deviceName" required>
 
-    <label for="deviceType">Τύπος Συσκευής:</label>
+    <label for="deviceType">Τύπος Συσκευής:<span style="color: red">*</span></label>
     <select id="deviceType" required>
       <option value="default">--Επιλέξτε--</option>
       <option value="laptop">Laptop</option>
@@ -96,14 +96,14 @@
       <option value="printer">Εκτυπωτής</option>
     </select>
 
-    <label for="brand">Μάρκα</label>
+    <label for="brand">Μάρκα:<span style="color: red">*</span></label>
     <input type="text" id="brand" placeholder="π.χ. HP, Dell" required>
 
     <label for="quantity">Πλήθος Ίδιων Συσκευών:</label>
     <input type="number" id="quantity" name="quantity" min="1" value="1" onchange="generateSerialFields()">
 
     <div id="serialFields">
-      <label for="serial0">Σειριακός Αριθμός 1:</label>
+      <label for="serial0">Σειριακός Αριθμός 1:<span style="color: red">*</span></label>
       <input type="text" id="serial0" name="serial0" required>
     </div>
 

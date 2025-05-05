@@ -6,7 +6,7 @@ function generateSerialFields() {
     for (let i = 0; i < quantity; i++) {
       const label = document.createElement("label");
       label.setAttribute("for", "serial" + i);
-      label.innerText = "Σειριακός Αριθμός " + (i + 1) + ":";
+      label.innerHTML = "Σειριακός Αριθμός " + (i + 1) + '<span style="color: red">*</span>';
 
       const input = document.createElement("input");
       input.type = "text";
